@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . '/../model.php';
 
 if (!isset($_SESSION['usuario_id'])) {

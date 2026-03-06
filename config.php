@@ -16,3 +16,6 @@ try {
 } catch (PDOException $e) {
     die("Error conexión: " . $e->getMessage());
 }
+function formatoPeso($numero) {
+    return '$ ' . number_format($numero, 0, ',', '.');
+}

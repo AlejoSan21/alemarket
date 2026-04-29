@@ -1,0 +1,364 @@
+/* assets/css/estilos.css */
+:root {
+    --primary-color: #1e3a8a;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --bg-panel: #f1f5f9;
+    --bg-card: #ffffff;
+    --border-color: #e2e8f0;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: var(--bg-panel);
+    margin: 0;
+    color: #1e293b;
+}
+.body-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f1f5f9; /* Color de fondo suave */
+}
+.login-container input {
+    background-color: #eff6ff; /* Azul muy clarito */
+    border: 1px solid #dbeafe;
+}
+.login-container {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+.login-container h2 { color: var(--primary-color); margin-bottom: 1.5rem; }
+.login-container input { width: 100%; padding: 10px; margin-bottom: 1rem; border: 1px solid var(--border-color); border-radius: 6px; box-sizing: border-box; }
+.login-container button { width: 100%; padding: 10px; background: var(--primary-color); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+
+/* Contenedor Principal Dashboard */
+.main-panel {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Header Pegado */
+header {
+    background: var(--bg-card);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+}
+
+header h1 { font-size: 1.2rem; margin: 0; color: var(--primary-color); }
+
+nav a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+nav a:hover { background: #f1f5f9; color: var(--primary-color); }
+
+/* Grid de Indicadores (KPIs) pegados */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+.stat-card h3 { margin: 0; font-size: 0.75rem; color: #64748b; text-transform: uppercase; }
+.stat-card p { margin: 5px 0 0; font-size: 1.4rem; font-weight: 800; color: #1e293b; }
+
+/* Sección central: Gráfica y Tablas lado a lado */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 10px;
+}
+
+.panel-block {
+    background: var(--bg-card);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+.panel-block h3 { margin: 0 0 10px 0; font-size: 0.9rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 5px; }
+
+/* Tablas Compactas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+table th { text-align: left; color: #64748b; padding: 8px; border-bottom: 2px solid #f1f5f9; }
+table td { padding: 8px; border-bottom: 1px solid #f1f5f9; }
+
+/* Badges y Botones */
+.badge-danger { background: #fee2e2; color: #ef4444; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.btn-primary { background: var(--primary-color); color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; }
+.quick-actions { background: var(--bg-card); padding: 10px; margin-top: 10px; border-radius: 8px; border: 1px solid var(--border-color); }
+
+.input-pro {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: #fdfdfd;
+    font-family: inherit;
+}
+
+.input-pro:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    background: #fff;
+}
+
+/* Ajuste para que la tabla de ventas se vea más limpia */
+.compact-table strong {
+    color: var(--primary-color);
+}
+/* --- NUEVOS ESTILOS PARA DISEÑO DE PANELES --- */
+
+/* Contenedor que divide la pantalla en columnas (Buscador vs Tabla) */
+.content-grid {
+    display: grid;
+    gap: 15px; /* Espacio entre los bloques */
+    margin-top: 10px;
+    align-items: start;
+}
+
+/* Inputs y Selects con estilo profesional */
+.input-pro, .panel-block input, .panel-block select {
+    width: 100%;
+    padding: 10px; /* Esto es clave para el look moderno */
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: #fdfdfd;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    font-family: inherit;
+}
+
+.input-pro:focus, .panel-block input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+/* Botones de acción dentro de las tablas */
+.btn-panel {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid var(--border-color);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.btn-panel:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Colores para botones específicos */
+.btn-panel.primary { background: var(--primary-color); color: white; border: none; }
+.btn-panel.success { background: var(--success-color); color: white; border: none; }
+.btn-panel.danger { background: var(--danger-color); color: white; border: none; }
+
+/* Tabla compacta estilo "pegado" */
+.compact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.compact-table th {
+    text-align: left;
+    color: var(--secondary-color);
+    padding: 10px;
+    border-bottom: 2px solid var(--bg-color);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.compact-table td {
+    padding: 10px;
+    border-bottom: 1px solid var(--bg-color);
+}
+
+.compact-table tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Badges para el Stock */
+.badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+/* Estilo extra para el historial */
+.compact-table small {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.compact-table strong {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+/* Efecto para las filas de la tabla */
+.compact-table tbody tr {
+    transition: background 0.2s;
+}
+
+.compact-table tbody tr:hover {
+    background-color: #f0f7ff; /* Un azul muy claro al pasar el mouse */
+}
+/* Estilos para formularios de edición centrados */
+.container-small {
+    max-width: 600px;
+    margin: 40px auto; /* Centra el bloque y le da espacio arriba/abajo */
+}
+
+.seccion-password {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed var(--border-color);
+    margin: 15px 0;
+}
+
+.seccion-password label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+/* Etiquetas generales para formularios */
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+/* --- ESTILOS PARA ALERTAS MODERNAS --- */
+.alert {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.alert-success {
+    color: #065f46;
+    background-color: #d1fae5;
+    border-color: #a7f3d0;
+}
+
+.alert-danger {
+    color: #991b1b;
+    background-color: #fee2e2;
+    border-color: #fecaca;
+}
+
+.alert-warning {
+    color: #92400e;
+    background-color: #fef3c7;
+    border-color: #fde68a;
+}
+/* --- RESPONSIVIDAD (Media Queries) --- */
+
+/* Tablets y pantallas medianas (menos de 768px) */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Apila la gráfica sobre la tabla */
+    }
+
+    header {
+        flex-direction: column; /* Título arriba, menú abajo */
+        text-align: center;
+        gap: 10px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    nav a {
+        margin-left: 0;
+        font-size: 0.75rem;
+    }
+
+    .login-container {
+        width: 90%; /* El login ocupa casi todo el ancho en móviles */
+        padding: 1.5rem;
+    }
+}
+
+/* Celulares pequeños (menos de 480px) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1rem;
+    }
+
+    .stat-card p {
+        font-size: 1.1rem; /* Números un poco más pequeños para que no se corten */
+    }
+
+    /* Hacer que las tablas permitan scroll lateral si son muy anchas */
+    .panel-block {
+        overflow-x: auto;
+        padding: 10px;
+    }
+
+    table {
+        min-width: 400px; /* Asegura que la tabla no se aplaste demasiado */
+    }
+
+    .btn-panel {
+        padding: 8px;
+        width: 100%; /* Botones de acción ocupan todo el ancho en móviles */
+        display: block;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+}

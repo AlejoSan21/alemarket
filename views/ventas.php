@@ -77,7 +77,7 @@ if (isset($_GET['borrar_item'])) {
     <header class="panel-header">
         <div>
             <h1> Terminal de Ventas</h1>
-            <small>AleMarket1 - Registro de transacciones</small>
+            <small>AleMarket - Registro de transacciones</small>
         </div>
         <nav>
             <a href="dashboard.php"> Menú Principal</a>

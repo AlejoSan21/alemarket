@@ -18,7 +18,7 @@ $stmt = $rolModel->listar();
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Registro de Usuarios - AleMarket1</title>
+    <title>Registro de Usuarios - AleMarket</title>
 </head>
 <body>
     <h1>Panel de Superadmin</h1>

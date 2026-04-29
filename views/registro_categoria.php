@@ -9,7 +9,7 @@ if (!isset($_SESSION['rol']) || ($_SESSION['rol'] != 'superadmin' && $_SESSION['
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Categorías - AleMarket1</title>
+    <title>Categorías - AleMarket</title>
 </head>
 <body>
     <h1>Gestión de Inventario</h1>

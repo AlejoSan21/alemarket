@@ -18,10 +18,10 @@ $stmt = $catModel->listar(); // Listamos las categorías creadas anteriormente
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Inventario - AleMarket1</title>
+    <title>Inventario - AleMarket</title>
 </head>
 <body>
-    <h1>AleMarket1 - Gestión de Inventario</h1>
+    <h1>AleMarket - Gestión de Inventario</h1>
     <hr>
     <h3>Registrar Nuevo Producto</h3>
 

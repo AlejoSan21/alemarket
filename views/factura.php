@@ -50,7 +50,7 @@ if (!$infoVenta) {
 <div class="main-panel">
     <div class="ticket-preview">
         <div style="text-align:center;">
-            <h2 style="margin:0;">ALEMARKET</h2>
+            <h2 style="margin:0;">AleMarket</h2>
             <p style="font-size:0.8rem;">Nit: 123456789-0<br>La Dorada, Caldas</p>
             <hr>
             <p><strong>FACTURA #<?php echo $id_venta; ?></strong></p>

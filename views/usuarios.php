@@ -24,11 +24,11 @@ $usuarios = $uController->listar();
 <div class="main-panel">
     <header class="panel-header">
         <div>
-            <h1>👥 Gestión de Personal</h1>
+            <h1> Gestión de Personal</h1>
             <small>Panel exclusivo del Superadministrador</small>
         </div>
         <nav>
-            <a href="dashboard.php">🏠 Dashboard</a>
+            <a href="dashboard.php"> Dashboard</a>
             <a href="../index.php?action=logout" class="btn-logout">Salir</a>
         </nav>
     </header>
@@ -83,19 +83,19 @@ $usuarios = $uController->listar();
                         </td>
                         <td align="center">
                             <?php if($u['id'] != $_SESSION['usuario_id']): ?>
-                                <a href="editar_usuario.php?id=<?php echo $u['id']; ?>" class="btn-panel">✏️</a>
+                                <a href="editar_usuario.php?id=<?php echo $u['id']; ?>" class="btn-panel">Editar</a>
                                 
                                 <?php if($u['estado'] == 1): ?>
                                     <a href="../controllers/UsuarioController.php?action=desactivar&id=<?php echo $u['id']; ?>" 
-                                       class="btn-panel danger" onclick="return confirm('¿Desactivar?')">Off</a>
+                                       class="btn-panel danger" onclick="return confirm('¿Desactivar?')">Desactivar</a>
                                 <?php else: ?>
                                     <a href="../controllers/UsuarioController.php?action=activar&id=<?php echo $u['id']; ?>" 
-                                       class="btn-panel success">On</a>
+                                       class="btn-panel success">Activar</a>
                                 <?php endif; ?>
 
                                 <a href="../controllers/UsuarioController.php?action=eliminar&id=<?php echo $u['id']; ?>" 
                                    class="btn-panel danger" style="background: #334155;" 
-                                   onclick="return confirm('¿Borrar definitivamente?')">🗑️</a>
+                                   onclick="return confirm('¿Borrar definitivamente?')">Eliminar</a>
                             <?php else: ?>
                                 <small style="color: var(--secondary-color);">Mi cuenta</small>
                             <?php endif; ?>
@@ -107,7 +107,7 @@ $usuarios = $uController->listar();
         </section>
 
         <section class="panel-block">
-            <h3>➕ Nuevo Colaborador</h3>
+            <h3> Nuevo Colaborador</h3>
             <form method="POST" action="../controllers/UsuarioController.php?action=registrar" style="display: grid; gap: 10px;">
                 <input type="text" name="nombre" placeholder="Nombre completo" required class="input-pro">
                 <input type="text" name="usuario" placeholder="Nombre de usuario" required class="input-pro">

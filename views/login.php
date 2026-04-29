@@ -13,7 +13,7 @@
         
         <?php if(isset($_GET['error'])): ?>
             <div class="error-msg">
-                Usuario o contraseña incorrectos
+               ⚠️ Usuario o contraseña incorrectos
             </div>
         <?php endif; ?>
 

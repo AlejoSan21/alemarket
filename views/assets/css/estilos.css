@@ -1,0 +1,747 @@
+/* assets/css/estilos.css */
+:root {
+    --primary-color: #1e3a8a;
+    --secondary-color: #64748b;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --bg-panel: #f1f5f9;
+    --bg-card: #ffffff;
+    --bg-color: #f1f5f9;
+    --border-color: #e2e8f0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background-color: var(--bg-panel);
+    min-height: 100vh;
+    margin: 0;
+    color: #1e293b;
+    display: flex;
+    flex-direction: column;
+}
+
+body > .main-panel {
+    flex: 1;
+    min-height: 0;
+}
+
+.body-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f1f5f9; /* Color de fondo suave */
+}
+.login-container input {
+    background-color: #eff6ff; /* Azul muy clarito */
+    border: 1px solid #dbeafe;
+}
+.login-container {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+}
+.login-container h2 { color: var(--primary-color); margin-bottom: 1.5rem; }
+.login-container input { width: 100%; padding: 10px; margin-bottom: 1rem; border: 1px solid var(--border-color); border-radius: 6px; box-sizing: border-box; }
+.login-container button { width: 100%; padding: 10px; background: var(--primary-color); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+
+/* Contenedor Principal Dashboard */
+.main-panel {
+    width: min(100%, 1440px);
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 10px 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-sizing: border-box;
+}
+
+/* Header Pegado */
+header {
+    background: var(--bg-card);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+}
+
+header h1 { font-size: 1.2rem; margin: 0; color: var(--primary-color); }
+
+nav a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 15px;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+nav a:hover { background: #f1f5f9; color: var(--primary-color); }
+
+/* Grid de Indicadores (KPIs) pegados */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+.stat-card h3 { margin: 0; font-size: 0.75rem; color: #64748b; text-transform: uppercase; }
+.stat-card p { margin: 5px 0 0; font-size: 1.4rem; font-weight: 800; color: #1e293b; }
+
+/* Sección central: Gráfica y Tablas lado a lado */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 10px;
+    align-items: stretch;
+    flex: 1;
+    min-height: 0;
+}
+.panel-block {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    padding: 16px;
+    min-height: 0;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+.panel-block h3 { margin: 0 0 10px 0; font-size: 0.9rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 5px; }
+.panel-block .chart-wrapper {
+    flex: 1;
+    min-height: 360px;
+    display: flex;
+}
+
+.panel-block .chart-wrapper canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+/* Tablas Compactas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+}
+table th { text-align: left; color: #64748b; padding: 8px; border-bottom: 2px solid #f1f5f9; }
+table td { padding: 8px; border-bottom: 1px solid #f1f5f9; }
+
+/* Badges y Botones */
+.badge-danger { background: #fee2e2; color: #ef4444; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
+.btn-primary { background: var(--primary-color); color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; }
+.quick-actions { background: var(--bg-card); padding: 12px 14px; margin-top: auto; border-radius: 8px; border: 1px solid var(--border-color); }
+
+.input-pro {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: #fdfdfd;
+    font-family: inherit;
+}
+
+.input-pro:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    background: #fff;
+}
+
+/* Ajuste para que la tabla de ventas se vea más limpia */
+.compact-table strong {
+    color: var(--primary-color);
+}
+/* --- NUEVOS ESTILOS PARA DISEÑO DE PANELES --- */
+
+/* Contenedor que divide la pantalla en columnas (Buscador vs Tabla) */
+.content-grid {
+    display: grid;
+    gap: 15px; /* Espacio entre los bloques */
+    margin-top: 10px;
+    align-items: start;
+}
+
+.content-grid.terminal-grid {
+    grid-template-columns: minmax(280px, 360px) 1fr;
+    gap: 18px;
+}
+
+.sidebar-panel {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+}
+
+.panel-header {
+    background: rgba(255,255,255,0.95);
+    padding: 18px 20px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 10px 30px rgba(15,23,42,0.06);
+    margin-bottom: 0;
+}
+
+.panel-header div {
+    min-width: 0;
+}
+
+.panel-header h1 {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.panel-header small {
+    display: block;
+    margin-top: 4px;
+    color: var(--secondary-color);
+}
+
+.panel-header nav {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.panel-header nav a {
+    background: #f8fafc;
+    color: #334155;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: 0.2s;
+    font-size: 0.9rem;
+}
+
+.panel-header nav a:hover {
+    background: #eef2ff;
+    border-color: #c7d2fe;
+}
+
+.btn-logout {
+    color: #ef4444;
+    background: rgba(239,68,68,0.08);
+    border-color: rgba(239,68,68,0.15);
+}
+
+.terminal-total-box {
+    margin-top: 20px;
+    padding: 18px 22px;
+    background: var(--primary-color);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-shadow: 0 14px 30px rgba(30,58,138,0.14);
+}
+
+.terminal-total-box span:first-child {
+    font-size: 1rem;
+    font-weight: 700;
+    opacity: 0.95;
+}
+
+.terminal-total-box span:last-child {
+    font-size: 2rem;
+}
+
+.terminal-table-placeholder {
+    padding: 40px 0;
+    text-align: center;
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.input-row .input-pro {
+    width: 80px;
+    min-width: 80px;
+    padding: 10px 12px;
+    height: 42px;
+    box-sizing: border-box;
+}
+
+.input-row .btn-panel {
+    flex: 1;
+    padding: 0 18px;
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.terminal-side-card {
+    min-height: auto;
+}
+
+.panel-block h3 {
+    font-size: 0.95rem;
+}
+
+/* Inputs y Selects con estilo profesional */
+.input-pro, .panel-block input, .panel-block select {
+    width: 100%;
+    padding: 10px; /* Esto es clave para el look moderno */
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: #fdfdfd;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    font-family: inherit;
+}
+
+.input-pro:focus, .panel-block input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+/* Botones de acción dentro de las tablas */
+.btn-panel {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 1px solid var(--border-color);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.btn-panel:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Colores para botones específicos */
+.btn-panel.primary { background: var(--primary-color); color: white; border: none; }
+.btn-panel.success { background: var(--success-color); color: white; border: none; }
+.btn-panel.danger { background: var(--danger-color); color: white; border: none; }
+
+/* Tabla compacta estilo "pegado" */
+.compact-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.compact-table th {
+    text-align: left;
+    color: var(--secondary-color);
+    padding: 10px;
+    border-bottom: 2px solid var(--bg-color);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.compact-table td {
+    padding: 10px;
+    border-bottom: 1px solid var(--bg-color);
+}
+
+.compact-table tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Badges para el Stock */
+.badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+/* Estilo extra para el historial */
+.compact-table small {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.compact-table strong {
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+/* Efecto para las filas de la tabla */
+.compact-table tbody tr {
+    transition: background 0.2s;
+}
+
+.compact-table tbody tr:hover {
+    background-color: #f0f7ff; /* Un azul muy claro al pasar el mouse */
+}
+/* Estilos para formularios de edición centrados */
+.container-small {
+    max-width: 600px;
+    margin: 40px auto; /* Centra el bloque y le da espacio arriba/abajo */
+}
+
+.seccion-password {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed var(--border-color);
+    margin: 15px 0;
+}
+
+.seccion-password label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+/* Etiquetas generales para formularios */
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+/* --- ESTILOS PARA ALERTAS MODERNAS --- */
+.alert {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+/* ==========================================================================
+   ESTILOS PARA LA RECUPERACIÓN DE CONTRASEÑA (ALEMARKET)
+   ========================================================================== */
+
+/* Contenedor principal centrado de las tarjetas */
+.recovery-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    font-family: sans-serif;
+}
+
+.recovery-container h3 {
+    margin-top: 0;
+    color: #1a365d;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.recovery-container p {
+    color: #4a5568;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Grupos de formularios e inputs */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #1a365d;
+    outline: none;
+}
+
+/* Botón primordial de acción */
+.btn-recovery {
+    background-color: #1a365d;
+    color: #ffffff;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-recovery:hover {
+    background-color: #2a4365;
+}
+
+/* Enlaces de retorno */
+.back-link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.back-link a {
+    color: #1a365d;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
+
+/* Alertas de Estado (Error, Éxito y Simulación) */
+.alert-msg {
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.alert-msg.error {
+    color: #9b2c2c;
+    background-color: #fff5f5;
+    border: 1px solid #fed7d7;
+}
+
+.alert-msg.success {
+    color: #22543d;
+    background-color: #f0fff4;
+    border: 1px solid #c6f6d5;
+}
+
+.alert-msg.debug {
+    background-color: #edf2f7;
+    border: 1px solid #e2e8f0;
+    color: #2d3748;
+    font-size: 13px;
+}
+
+.alert-msg.debug a {
+    color: #2b6cb0;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.alert-msg.debug a:hover {
+    text-decoration: underline;
+}
+.alert-success {
+    color: #065f46;
+    background-color: #d1fae5;
+    border-color: #a7f3d0;
+}
+
+.alert-danger {
+    color: #991b1b;
+    background-color: #fee2e2;
+    border-color: #fecaca;
+}
+
+.alert-warning {
+    color: #92400e;
+    background-color: #fef3c7;
+    border-color: #fde68a;
+}
+.panel-block canvas {
+    max-width: 100% !important;
+    height: auto !important;
+}
+.panel-block > :last-child {
+    flex: 1;
+}
+table th:last-child, 
+table td:last-child {
+    text-align: right;
+}
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* En móviles, la gráfica va arriba y las tablas abajo */
+    }
+}
+
+/* --- SECCIÓN CHATBOT EN ESTILOS.CSS --- */
+#chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: auto;
+}
+
+#chat-circle {
+    width: 64px;
+    height: 64px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+    font-size: 28px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#chat-circle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(0,0,0,0.22);
+}
+
+#chat-box {
+    position: fixed;
+    bottom: 84px;
+    right: 20px;
+    width: min(340px, calc(100vw - 40px));
+    max-width: 340px;
+    min-height: 420px;
+    background: white;
+    border-radius: 22px;
+    display: none;
+    flex-direction: column;
+    border: 1px solid rgba(226,232,240,0.9);
+    box-shadow: 0 24px 70px rgba(15,23,42,0.18);
+    overflow: hidden;
+}
+
+#chat-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+#chat-messages {
+    flex: 1;
+    padding: 14px;
+    overflow-y: auto;
+    background: #f8fafc;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.msg-bot,
+.msg-user {
+    max-width: 85%;
+    padding: 12px 14px;
+    border-radius: 18px;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.msg-bot {
+    background: #e2e8f0;
+    color: #0f172a;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.msg-user {
+    background: var(--primary-color);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+#chat-input-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-top: 1px solid #e2e8f0;
+    padding: 12px;
+    background: #ffffff;
+}
+
+#chat-input-area input {
+    flex: 1;
+    border: 1px solid #cbd5e1;
+    border-radius: 999px;
+    padding: 10px 14px;
+    outline: none;
+    font-size: 0.95rem;
+    color: #0f172a;
+}
+
+#chat-input-area button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+@media (max-width: 480px) {
+    #chat-box {
+        right: 10px;
+        bottom: 80px;
+        width: calc(100vw - 32px);
+        min-height: 380px;
+    }
+}
